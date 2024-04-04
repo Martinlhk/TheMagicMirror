@@ -1,4 +1,7 @@
-/* Config Sample
+/* MagicMirror² Config Sample
+ *
+ * By Michael Teeuw https://michaelteeuw.nl
+ * MIT Licensed.
  *
  * For more information on how you can configure this file
  * see https://docs.magicmirror.builders/configuration/introduction.html
@@ -27,8 +30,8 @@ let config = {
 	httpsPrivateKey: "",	// HTTPS private key path, only require when useHttps is true
 	httpsCertificate: "",	// HTTPS Certificate path, only require when useHttps is true
 
-	language: "en",
-	locale: "en-US",
+	language: "fr",
+	locale: "fr-BE",
 	logLevel: ["INFO", "LOG", "WARN", "ERROR"], // Add "DEBUG" for even more logging
 	timeFormat: 24,
 	units: "metric",
@@ -47,7 +50,7 @@ let config = {
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "Calendrier",
 			position: "top_left",
 			config: {
 				calendars: [
@@ -59,49 +62,41 @@ let config = {
 				]
 			}
 		},
+		
 		{
-			module: "compliments",
-			position: "lower_third"
+			module: "helloworld",
+			position: "middle_center",
+			header: "Petit mot du jour",
+			config: {
+				text: "Bonjour à tous, bienvenue à la faculté !"
+			}
 		},
 		{
-			module: "weather",
+			module: "helloworld",
 			position: "top_right",
+			header: "Météo",
 			config: {
-				weatherProvider: "openweathermap",
-				type: "current",
-				location: "New York",
-				locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				apiKey: "YOUR_OPENWEATHER_API_KEY"
+				text: "Météo"
 			}
 		},
 		{
-			module: "weather",
-			position: "top_right",
-			header: "Weather Forecast",
+			module: "helloworld",
+			position: "bottom_left",
+			header: "Actualité",
 			config: {
-				weatherProvider: "openweathermap",
-				type: "forecast",
-				location: "New York",
-				locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				apiKey: "YOUR_OPENWEATHER_API_KEY"
+				text: "Actualité"
 			}
 		},
 		{
-			module: "newsfeed",
-			position: "bottom_bar",
+			module: "helloworld",
+			position: "bottom_right",
+			header: "Menu du jour",
 			config: {
-				feeds: [
-					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					}
-				],
-				showSourceTitle: true,
-				showPublishDate: true,
-				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
+				text: "Menu du jour"
 			}
 		},
+		
+		
 	]
 };
 
